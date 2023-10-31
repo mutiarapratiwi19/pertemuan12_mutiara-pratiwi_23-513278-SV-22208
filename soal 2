@@ -1,0 +1,51 @@
+# Mencetak Menu
+def menu():
+  print("Pilih Bentuk 2D")
+  print()
+  print("1. Persegi Panjang")
+  print("2. Lingkaran")
+  print("3. Segitiga")
+  print("4. Keluar")
+  pilihan = input("Pilihan Anda (1-4): ")
+  return pilihan
+
+def persegi():
+  print("Menghitung Luas Persegi Panjang")
+  panjang = float(input("Masukkan Panjang: "))
+  lebar = float(input("Masukkan Lebar: "))
+  luas = panjang * lebar
+  print("Luas Persegi Panjang adalah:", luas)
+  tanya_ulang = input("Coba lagi (Y/N)? ").upper()
+  return tanya_ulang
+
+def lingkaran():
+  print("Menghitung Luas Lingkaran")
+  jari_jari = float(input("Masukkan Jari-Jari: "))
+  luas = 3.14 * jari_jari ** 2
+  print("Luas Lingkaran adalah:", luas)
+  tanya_ulang = input("Coba lagi (Y/N)? ").upper()
+  return tanya_ulang
+
+def segitiga():
+  print("Menghitung Luas Segitiga")
+  alas = float(input("Masukkan Alas: "))
+  tinggi = float(input("Masukkan Tinggi: "))
+  luas = (alas * tinggi) / 2
+  print("Luas Segitiga adalah:", luas)
+  tanya_ulang = input("Coba lagi (Y/N)? ").upper()
+  return tanya_ulang
+
+while True:
+  pilihan = menu()
+
+  if pilihan == "1":
+    tanya_ulang = persegi()
+  elif pilihan == "2":
+    tanya_ulang = lingkaran()
+  elif pilihan == "3":
+    tanya_ulang = segitiga()
+  elif pilihan == "4":
+    break
+
+  if tanya_ulang != "Y":
+    break
